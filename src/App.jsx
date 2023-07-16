@@ -1,18 +1,26 @@
 import "./App.css";
 import { useRef, useEffect, useState } from "react";
-import Canvas from "./components/Canvas";
 import Header from "./components/Header"
 import { Route, Routes } from "react-router-dom";
+import MainContainer from "./components/MainContainer";
 function App() {
 
  return (
+      <div>
 
-      <Routes>
-        <Route path="/" element={<Header/>}></Route>
-        <Route path="/canvas" element={<Canvas/>}></Route>
+        <Header/>
 
-      </Routes>  
+
+        <Routes>
+
+          
+              <Route path="/canvas" element={<MainContainer/>}></Route>
+             
+            
+        
+        </Routes>  
      
+      </div>
 
 
   

@@ -104,7 +104,7 @@ const Canvas = () => {
 
     return (
     
-    <div>
+    <div className='w-1/3 bg-blue-400 flex justify-center'>
 
       <canvas
         className='w-full max-w-[400px]  h-[400px]'
