@@ -32,7 +32,6 @@ const Canvas = () => {
         const canvas = canvasRef.current;
         canvas.width = 500;
         canvas.height = 500;
-        canvas.style.border = "1px solid red";
     
         const context = canvas.getContext("2d");
         context.linecap = LINECAP;
@@ -104,10 +103,10 @@ const Canvas = () => {
 
     return (
     
-    <div className='w-1/3 bg-blue-400 flex justify-center'>
+    <div className='w-3/5 mx-4 bg-neutral-200 flex justify-center'>
 
       <canvas
-        className='w-full max-w-[400px]  h-[400px]'
+        className='w-full max-w-[400px] h-[400px] bg-white rounded-md border-2 border-neutral-300'
         onMouseDown={startDrawing}
         onMouseUp={finishDrawing}
         onMouseMove={draw}
