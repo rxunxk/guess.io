@@ -103,10 +103,10 @@ const Canvas = () => {
 
     return (
     
-    <div className='w-3/5 mx-4 bg-neutral-200 flex justify-center'>
+    <div className='w-3/5 max-sm:w-full max-sm:m-0 max-sm:mb-4    mx-4 bg-neutral-200 flex justify-center'>
 
       <canvas
-        className='w-full max-w-[400px] h-[400px] bg-white rounded-md border-2 border-neutral-300'
+        className='w-full  h-[400px] bg-white rounded-md border-2 border-neutral-300'
         onMouseDown={startDrawing}
         onMouseUp={finishDrawing}
         onMouseMove={draw}

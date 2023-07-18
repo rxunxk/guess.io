@@ -5,7 +5,7 @@ import ChatArea from './ChatArea';
 
 const MainContainer = () => {
   return (
-    <div className="flex w-full h-screen pt-16 p-4">
+    <div className="flex max-sm:flex-col w-full h-screen pt-16 p-4">
         <PlayerList/>
         <Canvas/>
         <ChatArea/>

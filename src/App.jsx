@@ -6,7 +6,9 @@ import MainContainer from "./components/MainContainer";
 function App() {
 
  return (
-      <div>
+  <div className="w-full bg-white h-screen flex justify-center">
+
+      <div className="w-full h-full max-h-[200px] max-w-[1300px]  ">
 
         <Header/>
 
@@ -22,6 +24,7 @@ function App() {
      
       </div>
 
+  </div>
 
   
    );
