@@ -1,4 +1,4 @@
-import { create } from 'zustand'
+import { create } from "zustand";
 
 export const useStore = create((set) => ({
   user:{},
@@ -9,15 +9,9 @@ export const useStore = create((set) => ({
 
 }))
 
-
-
-
-
-
-
-
-
-
-
-
-
+export const useToolbar = create((set) => ({
+  strokeColor: "black",
+  strokeWidth: 3,
+  setStrokeColor: (strokeColor) => set(() => ({ strokeColor: strokeColor })),
+  setStrokeWidth: (strokeWidth) => set(() => ({ strokeWidth: strokeWidth })),
+}));

@@ -3,11 +3,7 @@ import { useNavigate } from 'react-router-dom'
 import { joinRoom } from '../api/socketFunctions'
 const JoinRoom = () => {
 
-  const {user,setUser} = useStore()
-
-  const handleChange = (e) => {
-    setUser({...user,[e.target.name]:[e.target.value]})
-  }
+  const {room,setRoom} = useStore()
   const navigate = useNavigate()
   return (
     <div className='pt-16 h-screen w-full px-4 flex justify-center items-center'>
@@ -15,27 +11,21 @@ const JoinRoom = () => {
             
                 <div className='w-full mb-2'>
                 
-                    {user.room || "Room Name"}
+                    {room || "Room Name"}
                 
                 </div>
             
             <div className='flex  flex-col'>
+
                 <input 
-                name="username"
-                placeholder='username'
                 className='mb-4 border-2 rounded-md p-2' 
-                onChange={handleChange}
-                type="text" />
-                <input 
-                name="room"
-                placeholder='room'
-                className='mb-4 border-2 rounded-md p-2' 
-                onChange={handleChange}
+                onChange={(e)=>{
+                    setRoom(e.target.value)
+                }} 
                 type="text" />
                 
                 <button 
                     onClick={()=>{
-                        joinRoom(user)
                         navigate('/canvas')
                     }}
                     className='w-full border-2 bg-blue-500  text-white rounded-md p-2' >
@@ -45,9 +35,8 @@ const JoinRoom = () => {
             </div>
 
         </div>
+      </div>
+  );
+};
 
-    </div>
-  )
-}
-
-export default JoinRoom
+export default JoinRoom;
