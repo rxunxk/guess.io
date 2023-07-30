@@ -7,13 +7,12 @@ const Canvas = () => {
     const STROKECOLOR = "black";
     const STROKEWIDTH = 2;
     const LINECAP = "round";
-    
+     
     const canvasRef = useRef(null);
     const contextRef = useRef(null);
 
     const [isDrawing, setIsDrawing] = useState(false);
-
-
+     
     function  getMousePos(evt) {
         var rect = canvasRef.current.getBoundingClientRect() // abs. size of element
         var scaleX = canvasRef.current.width / rect.width   // relationship bitmap vs. element for x
