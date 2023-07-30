@@ -1,12 +1,11 @@
 import "./App.css";
-import { useRef, useEffect, useState } from "react";
+import {  useEffect } from "react";
 import Header from "./components/Header";
 import { Route, Routes } from "react-router-dom";
 import MainContainer from "./components/MainContainer";
 import JoinRoom from "./components/JoinRoom";
 import { useStore } from './store/store'
 import { socket } from './api/socketInstance'
-import { useEffect } from 'react'
 
 function App() {
   const {user,setUsersArray} = useStore()

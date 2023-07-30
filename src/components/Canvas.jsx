@@ -1,8 +1,8 @@
 import { useRef, useEffect, useState } from "react";
 import { socket } from '../api/socketInstance';
 import { broadcastPoint , StartBroadcastPoint ,EndBroadcastPoint } from '../api/socketFunctions';
-const Canvas = () => {
-
+import { useToolbar } from "../store/store";
+import Toolbar from "../components/Toolbar"
 const STROKEWIDTH = 2;
 const LINECAP = "round";
 
