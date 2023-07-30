@@ -4,8 +4,10 @@ import Header from "./components/Header"
 import { Route, Routes } from "react-router-dom";
 import MainContainer from "./components/MainContainer";
 import JoinRoom from "./components/JoinRoom";
+import { useStore } from './store/store'
 
 function App() {
+  const {room} = useStore()
 
  return (
 
@@ -13,7 +15,7 @@ function App() {
 
       <div className="w-full h-screen max-h-[200px] max-w-[1300px]  ">
 
-        <Header/>
+        <Header room = {room}/>
 
         <Routes>
           
