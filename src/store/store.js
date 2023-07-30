@@ -1,8 +1,12 @@
 import { create } from 'zustand'
 
 export const useStore = create((set) => ({
-  room: '',
-  setRoom: (room) => set((state) => ({ room: room })),
+  user:{},
+  setUser: (user) => set(() => ({user : user})),
+  usersArray:['sfdf'],
+  setUsersArray: (usersArray) => set(() => ({usersArray : usersArray})),
+
+
 }))
 
 

@@ -3,6 +3,7 @@ import { socket } from '../api/socketInstance';
 import { broadcastPoint , StartBroadcastPoint ,EndBroadcastPoint } from '../api/socketFunctions';
 const Canvas = () => {
 
+
     const STROKECOLOR = "black";
     const STROKEWIDTH = 2;
     const LINECAP = "round";

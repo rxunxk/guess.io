@@ -4,9 +4,21 @@ import { Route, Routes } from "react-router-dom";
 import MainContainer from "./components/MainContainer";
 import JoinRoom from "./components/JoinRoom";
 import { useStore } from './store/store'
+import { socket } from './api/socketInstance'
+import { useEffect } from 'react'
 
 function App() {
-  const {room} = useStore()
+  const {user,setUsersArray} = useStore()
+
+
+    useEffect(()=>{
+
+    socket.on("currentRoomUsers",(currentRoomUsers)=>{
+      console.log(currentRoomUsers)
+      setUsersArray([...currentRoomUsers])
+    })
+
+  },[socket])
 
  return (
 
@@ -14,7 +26,7 @@ function App() {
 
       <div className="w-full h-screen max-h-[200px] max-w-[1300px]  ">
 
-        <Header room = {room}/>
+        <Header room = {user.room}/>
 
         <Routes>
           

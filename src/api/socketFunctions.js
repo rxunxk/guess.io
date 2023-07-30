@@ -13,3 +13,7 @@ export function StartBroadcastPoint(x,y){
 export function EndBroadcastPoint(){
     socket.emit('endpoints')
 }
+
+export function joinRoom(room){
+    socket.emit('join-room',room)
+}
