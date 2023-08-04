@@ -1,8 +1,10 @@
 import "../styles/ToolBarStyles.css";
 import { useToolbar } from "../store/store";
+import { Button } from "@/components/ui/button";
 
 const Toolbar = () => {
-  const { strokeColor, setStrokeColor, setStrokeWidth } = useToolbar();
+  const { strokeColor, setStrokeColor, setStrokeWidth, strokeWidth } =
+    useToolbar();
 
   const setColor = (e) => {
     setStrokeColor(e.target.classList[1]);
@@ -30,6 +32,7 @@ const Toolbar = () => {
             min="1"
             max="20"
             step={1}
+            value={strokeWidth}
             onInput={setPencilWidth}
           />
         </div>
@@ -37,7 +40,7 @@ const Toolbar = () => {
           <button
             id="eraser"
             onClick={() => {
-              setStrokeColor("white");
+              setStrokeColor("#ffffff");
             }}
           >
             Eraser
@@ -50,6 +53,7 @@ const Toolbar = () => {
               setStrokeColor(e.target.value);
             }}
           />
+          <Button>Hi !</Button>
         </div>
       </div>
     </>
