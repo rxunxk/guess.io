@@ -91,9 +91,9 @@ const Canvas = () => {
   };
 
   return (
-    <div className="flex-col w-3/5 max-sm:w-full max-sm:m-0 max-sm:mb-4    mx-4 bg-neutral-200 flex">
+    <div className="flex-col w-3/5 max-sm:w-full max-sm:m-0 max-sm:mb-4 mx-4 bg-neutral-200 flex">
       <canvas
-        className="w-full  h-[400px] bg-white rounded-md border-2 border-neutral-300"
+        className="w-full h-[400px] bg-white rounded-md border-2 border-neutral-300"
         onMouseDown={startDrawing}
         onMouseUp={finishDrawing}
         onMouseMove={draw}
