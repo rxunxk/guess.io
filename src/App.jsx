@@ -23,8 +23,8 @@ function App() {
   return (
     <div className="w-screen h-screen flex justify-center">
       <div className="w-full h-screen max-h-[200px] max-w-[1300px]  ">
-
-        <Header room = {user.room}/>
+{/*  */}
+        <Header user = {user}/>
 
         <Routes>
           <Route path="/" element={<JoinRoom />}></Route>

@@ -3,7 +3,7 @@ import { create } from "zustand";
 export const useStore = create((set) => ({
   user:{},
   setUser: (user) => set(() => ({user : user})),
-  usersArray:['sfdf'],
+  usersArray:['no User'],
   setUsersArray: (usersArray) => set(() => ({usersArray : usersArray})),
 
 
