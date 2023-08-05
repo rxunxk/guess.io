@@ -90,6 +90,15 @@ const Canvas = () => {
     setIsDrawing(false);
   };
 
+  const clearCanvas = () => {
+    contextRef.current.clearRect(
+      0,
+      0,
+      contextRef.current.canvas.width,
+      contextRef.current.canvas.height
+    );
+  };
+
   return (
     <div className="flex-col w-3/5 max-sm:w-full max-sm:m-0 max-sm:mb-4 mx-4 bg-neutral-200 flex">
       <canvas
@@ -99,7 +108,7 @@ const Canvas = () => {
         onMouseMove={draw}
         ref={canvasRef}
       ></canvas>
-      <Toolbar />
+      <Toolbar clearCanvas={clearCanvas} />
     </div>
   );
 };
