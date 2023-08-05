@@ -6,6 +6,7 @@ import {
   EndBroadcastPoint,
 } from "../api/socketFunctions";
 import { useToolbar } from "../store/store";
+import { useStore } from "../store/store";
 import Toolbar from "../components/Toolbar";
 const STROKEWIDTH = 2;
 const LINECAP = "round";
@@ -16,6 +17,7 @@ const Canvas = () => {
   const contextRef = useRef(null);
 
   const { strokeColor, strokeWidth } = useToolbar();
+  const {user} = useStore()
 
   function getMousePos(evt) {
     var rect = canvasRef.current.getBoundingClientRect(); // abs. size of element
@@ -64,7 +66,7 @@ const Canvas = () => {
     contextRef.current.beginPath();
 
     //move to mouse click position
-    StartBroadcastPoint(getMousePos(e).x, getMousePos(e).y);
+    StartBroadcastPoint(getMousePos(e).x, getMousePos(e).y,user.room);
     contextRef.current.moveTo(getMousePos(e).x, getMousePos(e).y);
 
     setIsDrawing(true);
@@ -79,13 +81,13 @@ const Canvas = () => {
 
     contextRef.current.strokeStyle = strokeColor;
     contextRef.current.lineWidth = strokeWidth;
-    broadcastPoint(getMousePos(e).x, getMousePos(e).y);
-    contextRef.current.lineTo(getMousePos(e).x, getMousePos(e).y);
+    broadcastPoint(getMousePos(e).x, getMousePos(e).y,user.room);
+    contextRef.current.lineTo(getMousePos(e).x, getMousePos(e).y,user.room);
     contextRef.current.stroke();
   };
 
   const finishDrawing = () => {
-    EndBroadcastPoint();
+    EndBroadcastPoint(user.room);
     contextRef.current.closePath();
     setIsDrawing(false);
   };

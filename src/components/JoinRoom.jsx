@@ -6,7 +6,7 @@ const JoinRoom = () => {
   const {user,setUser} = useStore()
 
   const handleChange = (e) => {
-    setUser({...user,[e.target.name]:[e.target.value]})
+    setUser({...user,[e.target.name]:e.target.value})
   }
   const navigate = useNavigate()
   return (
