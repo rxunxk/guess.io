@@ -1,5 +1,5 @@
 import { useToolbar } from "../store/store";
-import { colors, colors2 } from "../utilities/util";
+import { colors, colors2 } from "../utilities/colorUtil";
 import { LuEraser } from "react-icons/lu";
 import { AiOutlineClear } from "react-icons/ai";
 import PropTypes from "prop-types";
@@ -49,7 +49,7 @@ const Toolbar = ({ clearCanvas }) => {
             id="slider"
             type="range"
             min="1"
-            max="20"
+            max="50"
             step={1}
             value={strokeWidth}
             onInput={setPencilWidth}
