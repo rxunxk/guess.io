@@ -1,10 +1,4 @@
-import { useRef, useEffect, useState } from "react";
-import { socket } from '../api/socketInstance';
-import { broadcastPoint , StartBroadcastPoint ,EndBroadcastPoint } from '../api/socketFunctions';
-import { useToolbar ,useStore } from "../store/store";
-import Toolbar from "../components/Toolbar"
-const STROKEWIDTH = 2;
-const LINECAP = "round";
+useStore
 
 const Canvas = () => {
   const [isDrawing, setIsDrawing] = useState(false);
@@ -88,9 +82,9 @@ const Canvas = () => {
   };
 
   return (
-    <div className="flex-col w-3/5 max-sm:w-full max-sm:m-0 max-sm:mb-4    mx-4 bg-neutral-200 flex">
+    <div className="flex-col w-3/5 max-sm:w-full max-sm:m-0 max-sm:mb-4 mx-4 bg-neutral-200 flex">
       <canvas
-        className="w-full  h-[400px] bg-white rounded-md border-2 border-neutral-300"
+        className="w-full h-[400px] bg-white rounded-md border-2 border-neutral-300"
         onMouseDown={startDrawing}
         onMouseUp={finishDrawing}
         onMouseMove={draw}

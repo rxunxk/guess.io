@@ -10,7 +10,7 @@ export const useStore = create((set) => ({
 }))
 
 export const useToolbar = create((set) => ({
-  strokeColor: "black",
+  strokeColor: "#000000",
   strokeWidth: 3,
   setStrokeColor: (strokeColor) => set(() => ({ strokeColor: strokeColor })),
   setStrokeWidth: (strokeWidth) => set(() => ({ strokeWidth: strokeWidth })),
