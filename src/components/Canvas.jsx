@@ -17,7 +17,7 @@ const Canvas = () => {
   const contextRef = useRef(null);
 
   const { strokeColor, strokeWidth } = useToolbar();
-  const {user} = useStore()
+  const { user } = useStore();
 
   function getMousePos(evt) {
     var rect = canvasRef.current.getBoundingClientRect(); // abs. size of element
@@ -66,7 +66,7 @@ const Canvas = () => {
     contextRef.current.beginPath();
 
     //move to mouse click position
-    StartBroadcastPoint(getMousePos(e).x, getMousePos(e).y,user.room);
+    StartBroadcastPoint(getMousePos(e).x, getMousePos(e).y, user.room);
     contextRef.current.moveTo(getMousePos(e).x, getMousePos(e).y);
 
     setIsDrawing(true);
@@ -81,8 +81,8 @@ const Canvas = () => {
 
     contextRef.current.strokeStyle = strokeColor;
     contextRef.current.lineWidth = strokeWidth;
-    broadcastPoint(getMousePos(e).x, getMousePos(e).y,user.room);
-    contextRef.current.lineTo(getMousePos(e).x, getMousePos(e).y,user.room);
+    broadcastPoint(getMousePos(e).x, getMousePos(e).y, user.room);
+    contextRef.current.lineTo(getMousePos(e).x, getMousePos(e).y, user.room);
     contextRef.current.stroke();
   };
 
@@ -102,9 +102,9 @@ const Canvas = () => {
   };
 
   return (
-    <div className="flex-col w-3/5 max-sm:w-full max-sm:m-0 max-sm:mb-4 mx-4 bg-neutral-200 flex">
+    <div className="flex-col w-3/5 max-sm:w-full max-sm:m-0 max-sm:mb-4 mx-4 bg-neutral-200 flex rounded-md">
       <canvas
-        className="w-full h-[400px] bg-white rounded-md border-2 border-neutral-300"
+        className="w-full h-[400px] bg-white rounded-md border-2 border-neutral-300 rounded-md"
         onMouseDown={startDrawing}
         onMouseUp={finishDrawing}
         onMouseMove={draw}
